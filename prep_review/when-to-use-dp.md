@@ -37,3 +37,5 @@ i and ending at index j.
 k transactions", or "you are allowed to break up to k obstacles", etc.
 * Variables that describe statuses in a given state. For example "true if currently holding a key, false if not", 
 "currently holding k packages" etc.
+
+More pattern: https://leetcode.com/discuss/study-guide/1490172/Dynamic-programming-is-simple
