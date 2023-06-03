@@ -39,3 +39,19 @@ k transactions", or "you are allowed to break up to k obstacles", etc.
 "currently holding k packages" etc.
 
 More pattern: https://leetcode.com/discuss/study-guide/1490172/Dynamic-programming-is-simple
+
+How to convert top-down to bottom-up DP
+
+* Create a k-dimensional DP array, where k is the number of arguments in your top-down solution. 
+These are the parameters that define each DP state, and the length of each dimension in the DP array should be 
+large enough to contain all possible values.
+* Create a series of nested for-loops to iterate over all of the possible DP states. 
+Make sure to adjust the direction of iteration according to the base cases, you want to visit the base case first. 
+Sometimes this requires a little bit of critical thinking, but with practice selecting the correct order in which 
+to iterate over the states will become easier.
+* Copy and paste everything from your top-down recursive function into the innermost for-loop.
+Anywhere you have return some_value change that to dp[i][j][k] = some_value and then continue. Here, i, j, and k are 
+just the variables from your for loop that define the current dp state.
+* Change all calls to the recursive function from dp(0, 0, 0) to dp[0][0][0] (be mindful when you create your DP array, 
+it makes things easier if you have each dimension be in the same order as your variables in the original 
+recursive function, i.e. if your top down approach was dp(index, score) you want your array to be dp[index][score])
