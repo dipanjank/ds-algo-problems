@@ -42,5 +42,46 @@ Your browser uses the IP address to establish a connection to the web server and
 ### Conclusion
 DNS operates behind the scenes to make internet browsing user-friendly, allowing us to use easy-to-remember domain names instead of numerical IP addresses. Its hierarchical structure and caching mechanisms ensure efficient and fast resolution of domain names.
 
+![How DNS Works](dns-diagram.png)
 
-![img.png](img.png)
+Limitations of DNS
+
+Despite its critical role in internet infrastructure, the Domain Name System (DNS) has several limitations and vulnerabilities. Here are some of the main limitations:
+
+### 1. **Security Vulnerabilities**
+- **DNS Spoofing (Cache Poisoning)**: Attackers can corrupt the cache of a DNS resolver by inserting false address records, leading users to malicious sites.
+- **DDoS Attacks**: Distributed Denial of Service (DDoS) attacks can overwhelm DNS servers, rendering them unable to respond to legitimate queries.
+- **DNS Hijacking**: Attackers can redirect queries to malicious DNS servers, leading users to fraudulent websites.
+
+### 2. **Lack of Privacy**
+- **Unencrypted Queries**: Traditional DNS queries and responses are sent in plaintext, allowing eavesdroppers to monitor and log user activities.
+- **DNS Leakage**: DNS requests can sometimes bypass VPNs, exposing user browsing habits to ISPs or other third parties.
+
+### 3. **Scalability and Performance Issues**
+- **Latency**: DNS resolution can introduce latency, especially if multiple queries are required to resolve a single domain name.
+- **Load on Root and TLD Servers**: Increased internet usage can put a strain on root and TLD servers, potentially causing slowdowns or outages.
+
+### 4. **Configuration Complexity**
+- **Misconfigurations**: Incorrect DNS settings can lead to downtime, security vulnerabilities, and misdirection of traffic.
+- **Propagation Delays**: Changes to DNS records can take time to propagate throughout the internet, leading to inconsistencies.
+
+### 5. **Dependence on Centralized Systems**
+- **Single Points of Failure**: The hierarchical nature of DNS means that issues with higher-level servers (like root or TLD servers) can impact large portions of the internet.
+- **Centralization Concerns**: A few entities control critical parts of the DNS infrastructure, which can be a concern for resilience and neutrality.
+
+### 6. **Limited Support for Modern Requirements**
+- **Dynamic Updates**: DNS was not designed for frequent updates, which can be problematic for dynamic environments like cloud computing.
+- **Support for New Protocols**: Integrating newer protocols like DNS over HTTPS (DoH) and DNS over TLS (DoT) requires updates to infrastructure and software.
+
+### 7. **Naming Conflicts**
+- **Domain Squatting**: Individuals or entities may register domain names with the intent to resell them at a higher price.
+- **Conflicts with New TLDs**: The introduction of new top-level domains (TLDs) can lead to conflicts and confusion over domain names.
+
+### 8. **Fragmentation**
+- **Alternate DNS Roots**: The existence of alternative DNS roots can lead to fragmentation of the namespace, where different systems resolve the same domain names differently.
+
+### Addressing DNS Limitations:
+- **Security Enhancements**: Implementing DNSSEC (DNS Security Extensions) to ensure data integrity and authenticity.
+- **Privacy Improvements**: Adopting DNS over HTTPS (DoH) and DNS over TLS (DoT) to encrypt DNS queries.
+- **Redundancy and Load Balancing**: Using redundant DNS servers and load balancing to mitigate single points of failure and distribute query loads.
+- **Education and Best Practices**: Encouraging best practices for DNS configuration and management to reduce the risk of misconfigurations and improve overall reliability.
